@@ -2764,9 +2764,18 @@ externalS3:
   useIAM: false
   iamEndpoint: ""
 
+
+###################################
+# External GCS
+# - these configs are only used when `externalS3.enabled` is false and `externalGCS.enabled` is true
+###################################
+externalGCS:
+  enabled: false
+  bucketName: "bucket-name"
+
 ###################################
 # External Azure Blob Storage
-# - these configs are only used when `externalS3.enabled` is false and `externalAzureBlobStorage.enabled` is true
+# - these configs are only used when both `externalS3.enabled` and`externalGCS.enabled` are false and `externalAzureBlobStorage.enabled` is true
 ###################################
 externalAzureBlobStorage:
   enabled: false
@@ -2777,7 +2786,7 @@ externalAzureBlobStorage:
 
 ###################################
 # External OSS
-# - these configs are only used when both `externalS3.enabled` and `externalAzureBlobStorage.enabled` are false and `externalOSS.enabled` is true
+# - these configs are only used when `externalS3.enabled`, `externalGCS.enabled`, and `externalAzureBlobStorage.enabled` are false and `externalOSS.enabled` is true
 ###################################
 externalOSS:
   enabled: false
