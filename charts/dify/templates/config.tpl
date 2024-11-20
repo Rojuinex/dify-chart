@@ -155,6 +155,8 @@ S3_BUCKET_NAME: {{ .Values.externalS3.bucketName }}
 # S3_ACCESS_KEY: {{ .Values.externalS3.accessKey }}
 # S3_SECRET_KEY: {{ .Values.externalS3.secretKey }}
 S3_REGION: 'us-east-1'
+{{- else if .Values.externalGCS.enabled }}
+GOOGLE_STORAGE_BUCKET_NAME: {{ .Values.externalGCS.bucketName }}
 {{- else if .Values.externalAzureBlobStorage.enabled }}
 # The type of storage to use for storing user files. Supported values are `local`, `s3`, `azure-blob` and `aliyun-oss`, Default: `local`
 STORAGE_TYPE: azure-blob
