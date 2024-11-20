@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ template "dify.sandbox.fullname" . }}
-data:
-  {{- include "dify.sandbox.config" . | nindent 2 }}

@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ template "dify.web.fullname" . }}
-data:
-  {{- include "dify.web.config" . | nindent 2 }}
