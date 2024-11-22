@@ -397,6 +397,12 @@ server {
       proxy_pass http://{{ template "dify.web.fullname" .}}:{{ .Values.web.service.port }};
       include proxy.conf;
     }
+
+    location = /healthz {
+      access_log off;
+      add_header 'Content-Type' 'application/json';
+      return 200 '{"status":"UP"}';
+    }
 }
 {{- end }}
 
