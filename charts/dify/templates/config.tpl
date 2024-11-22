@@ -398,7 +398,7 @@ server {
       include proxy.conf;
     }
 
-    location = /healthz {
+    location /healthz {
       access_log off;
       add_header 'Content-Type' 'application/json';
       return 200 '{"status":"UP"}';
