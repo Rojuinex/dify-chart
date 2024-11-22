@@ -16,7 +16,7 @@ type: application
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
 
-version: 0.21.4
+version: 0.21.5
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -25,22 +25,22 @@ version: 0.21.4
 appVersion: "0.6.16"
 
 dependencies:
-- name: postgresql
-  version: 12.5.6
-  repository: https://charts.bitnami.com/bitnami
-  condition: postgresql.enabled
-  tags:
-    - postgres
-- name: redis
-  version: 16.13.2
-  repository: https://charts.bitnami.com/bitnami
-  condition: redis.enabled
-  tags:
-    - redis
-- name: weaviate
-  version: 16.1.0
-  repository: https://weaviate.github.io/weaviate-helm
-  condition: weaviate.enabled
-  tags:
-    - vector
-    - search
+  - name: postgresql
+    version: 12.5.6
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+    tags:
+      - postgres
+  - name: redis
+    version: 16.13.2
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.enabled
+    tags:
+      - redis
+  - name: weaviate
+    version: 16.1.0
+    repository: https://weaviate.github.io/weaviate-helm
+    condition: weaviate.enabled
+    tags:
+      - vector
+      - search
